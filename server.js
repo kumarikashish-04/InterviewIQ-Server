@@ -24,6 +24,9 @@ app.use("/api/auth",authRouter);
 app.use("/api/user",userRouter)
 app.use("/api/interview",interviewRouter)
 app.use("/api/payment",paymentRouter)
+app.get("/api/health", (req, res) => {
+    res.json({ status: "Server is running ✅" });
+  });
 connectDB();
 
 const PORT = process.env.PORT || 5000;
